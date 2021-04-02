@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="225dp"
+    android:elevation="30dp"
+    android:layout_margin="2.5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="3dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/articleImage"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:src="@drawable/madhyapradesh" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:id="@+id/articleHeadline"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_margin="3dp"
+                android:layout_weight="6"
+                android:paddingStart="5dp"
+                android:text="India America,ahdfkadhkerica, blr asn ashkj ajkadf ahdfkadhk ahdfkj"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/articleSave"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_gravity="top"
+                android:layout_marginTop="5dp"
+                android:layout_weight="4"
+                android:src="@drawable/ic_save_without_border" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/articleTopic"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/right_corner_round"
+                android:backgroundTint="@color/red100"
+                android:padding="2dp"
+                android:paddingRight="10dp"
+                android:paddingStart="15dp"
+                android:text="Technology"
+                android:textColor="@color/red"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/articleSource"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:padding="2dp"
+                android:text="Technology"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/articleTime"
+                android:layout_width="100dp"
+                android:layout_marginStart="8dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="Technology"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

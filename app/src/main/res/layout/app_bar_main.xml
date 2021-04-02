@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.roundedbutton.Activity.HomeActivity"
+    android:background="@color/lightgrey">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeconstraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:backgroundTint="@color/lightgrey"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/home_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:paddingLeft="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.000"
+            app:title="News App"
+            app:titleTextColor="@color/white">
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginRight="20dp"
+                android:gravity="end"
+                android:src="@drawable/ic_search"
+                app:tint="@color/white" />
+        </com.google.android.material.appbar.MaterialToolbar>
+
+        <View
+            android:id="@+id/homebottomview"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/bottom_two_corner_rounded"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/home_toolbar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/home_toolbar"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <!-- TabLayout that provides a horizontal layout to display tabs -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/home_sliding_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="30dp"
+            android:background="@android:color/transparent"
+            app:layout_constraintTop_toTopOf="@+id/homebottomview"
+            app:tabIndicatorHeight="0dp"
+            app:tabMinWidth="120dp"
+            app:tabMode="scrollable"
+            app:tabTextAppearance="@style/MyCustomTextAppearance" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        layout="@layout/content_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp" />
+
+</LinearLayout>

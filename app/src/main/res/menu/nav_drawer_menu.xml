@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_save_later"
+            android:icon="@drawable/ic_save_with_border"
+            android:title="Saved for later" />
+        <item
+            android:id="@+id/nav_world"
+            android:icon="@drawable/ic_world"
+            android:title="World" />
+        <item
+            android:id="@+id/nav_science"
+            android:icon="@drawable/ic_science"
+            android:title="Science" />
+        <item
+            android:id="@+id/nav_technology"
+            android:icon="@drawable/ic_technology"
+            android:title="Technology" />
+        <item
+            android:id="@+id/nav_sports"
+            android:icon="@drawable/ic_sport"
+            android:title="Sports" />
+        <item
+            android:id="@+id/nav_entertainment"
+            android:icon="@drawable/ic_entertainment"
+            android:title="Entertainment" />
+        <item
+            android:id="@+id/nav_health"
+            android:icon="@drawable/ic_add_icon"
+            android:title="Health" />
+        <item
+            android:id="@+id/nav_startup"
+            android:icon="@drawable/ic_startup"
+            android:title="Startup" />
+        <item
+            android:id="@+id/nav_travel"
+            android:icon="@drawable/ic_travel"
+            android:title="Travel" />
+        <item
+            android:id="@+id/nav_food"
+            android:icon="@drawable/ic_food"
+            android:title="Food" />
+        <item
+            android:id="@+id/nav_live_news"
+            android:icon="@drawable/ic_live_tv"
+            android:title="Live News" />
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="Settings" />
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_share"
+            android:title="Share" />
+
+        <item
+            android:id="@+id/nav_developers"
+            android:icon="@drawable/ic_developers"
+            android:title="Developers" />
+    </group>
+</menu>

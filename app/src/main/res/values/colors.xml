@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="fusia">#FF00FF</color>
+    <color name="grey">#c5c5c5</color>
+    <color name="fbcolour">#3b5999</color>
+    <color name="baseThemeColor">#000000</color>
+    <color name="darkgrey1">#707070</color>
+    <color name="golden">#FFD700</color>
+    <color name="lightgrey">#F2F2F2</color>
+    <color name="darkgrey">#A5A5A5</color>
+    <color name="red">#ff0000</color>
+
+
+    <color name="secondaryLight">#ffe756</color>
+    <color name="secondaryExtraLight">#F2EBA7</color>
+    <color name="secondaryDark">#ad8600</color>
+
+    <color name="background">@color/grey50</color>
+    <color name="boundary">@color/grey200</color>
+
+    <color name="onSurfaceTitle">@color/grey900</color>
+    <color name="onSurfaceSubtitle">@color/grey800</color>
+    <color name="onSurfaceText">@color/grey700</color>
+    <color name="onSurfaceMetadata">@color/grey500</color>
+    <color name="onSurfaceHint">@color/grey400</color>
+
+    <color name="tutorialMask">#CC000000</color>
+
+    <!-- Gray Color Palette -->
+    <color name="white">#FFFFFF</color>
+    <color name="grey50">#FAFAFA</color>
+    <color name="grey100">#F5F5F5</color>
+    <color name="grey200">#EEEEEE</color>
+    <color name="grey300">#E0E0E0</color>
+    <color name="grey400">#BDBDBD</color>
+    <color name="grey500">#9E9E9E</color>
+    <color name="grey600">#757575</color>
+    <color name="grey700">#616161</color>
+    <color name="grey800">#424242</color>
+    <color name="grey900">#212121</color>
+    <color name="black">#000000</color>
+
+    <!-- https://paletton.com/ is used to generate palette with code #E87E59 -->
+    <!-- Yellow Color Palette -->
+    <color name="yellowLight2">#FFDCB0</color>
+    <color name="yellowLight1">#FFC986</color>
+    <color name="yellow">#E8A959</color>
+    <color name="yellowDark1">#CE8A34</color>
+    <color name="yellowDark2">#B78C07</color>
+
+    <!-- Red Color Palette -->
+    <color name="red100">#FFC4B0</color>
+    <color name="red200">#FFA586</color>
+    <color name="red300">#F3916F</color>
+    <color name="red400">#E87E59</color>
+    <color name="red500">#CE5C34</color>
+    <color name="red600">#A63D19</color>
+
+    <!-- Green Color Palette -->
+    <color name="green100">#CCF2A7</color>
+    <color name="green200">#B0E87A</color>
+    <color name="green300">#8FD050</color>
+    <color name="green400">#72B92F</color>
+    <color name="green500">#549516</color>
+
+    <!-- Blue Color Palette -->
+    <color name="blue100">#94B9D1</color>
+    <color name="blue200">#608FAE</color>
+    <color name="blue300">#3E7294</color>
+    <color name="blue400">#275F84</color>
+    <color name="blue500">#15496A</color>
+
+    <!-- Yellow Color Palette -->
+    <color name="yellow100">#fdfd96</color>
+    <color name="yellow200">#f8ed62</color>
+    <color name="yellow300">#ffe135</color>
+    <color name="yellow400">#dab600</color>
+    <color name="yellow500">#a98600</color>
+
+    <!-- Purple Color Palette -->
+    <color name="purple100">#fabbff</color>
+    <color name="purple200">#f7a2f5</color>
+    <color name="purple300">#fc93ff</color>
+    <color name="purple400">#ff75fc</color>
+    <color name="purple500">#fe5af2</color>
+
+    <!-- Brown Color Palette -->
+    <color name="brown100">#c08b76</color>
+    <color name="brown200">#b77a62</color>
+    <color name="brown300">#a55a3c</color>
+    <color name="brown400">#844830</color>
+    <color name="brown500">#733e2a</color>
+
+    <!-- Orange Color Palette -->
+    <color name="orange100">#ffc04d</color>
+    <color name="orange200">#ffb733</color>
+    <color name="orange300">#ffae1a</color>
+    <color name="orange400">#ffa500</color>
+    <color name="orange500">#e69500</color>
+
+    <!-- Pink Color Palette -->
+    <color name="pink100">#fecae9</color>
+    <color name="pink200">#fe78c9</color>
+    <color name="pink300">#fe27a9</color>
+    <color name="pink400">#cb007b</color>
+    <color name="pink500">#82004e</color>
+
+    <!-- Teal Color Palette -->
+    <color name="teal100">#b2f0e8</color>
+    <color name="teal200">#8de5db</color>
+    <color name="teal300">#2fc4b2</color>
+    <color name="teal400">#289c8e</color>
+    <color name="teal500">#117c6f</color>
+
+    <!-- Transparent Shades -->
+    <color name="transparent_black">#66000000</color>
+    <color name="transparent_blue">#EE1589FF</color>
+
+</resources>

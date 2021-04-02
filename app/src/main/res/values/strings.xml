@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RoundedButton</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="terms_and_conditions"><u>terms &amp; conditions</u></string>
+    <string name="dummytext">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer</string>
+    <string name="greeting">Hope You Find it Useful !!</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>
