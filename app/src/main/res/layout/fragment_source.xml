@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
         android:text="Select your preferred news sources"
         android:textColor="@color/darkgrey"
@@ -20,7 +20,7 @@
         android:id="@+id/interestRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="32dp"
         android:layout_marginRight="5dp"
         android:background="@drawable/tab_bg_normal_white"
         android:padding="10dp" />

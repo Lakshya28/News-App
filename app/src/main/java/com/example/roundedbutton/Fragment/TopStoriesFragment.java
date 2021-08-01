@@ -16,8 +16,8 @@ public class TopStoriesFragment extends Fragment {
     NewsTopicWidget widgetLatestNews, widgetIndiaNews, widgetGeneralNews, widgetTechNews,
             widgetScienceNews, widgetSportsNews, widgetEntertainmentNews, widgetHealthNews, widgetBusinessNews;
 
-    //private NewsRecyclerViewAdapter latestNewsRVAdapter, indiaNewsRVAdapter,
-    //       techNewsRVAdapter, scienceNewsRVAdapter, sportsNewsRVAdapter, entertainmentNewsRVAdapter, healthNewsRVAdapter;
+    private NewsRecyclerViewAdapter latestNewsRVAdapter, indiaNewsRVAdapter,
+            techNewsRVAdapter, scienceNewsRVAdapter, sportsNewsRVAdapter, entertainmentNewsRVAdapter, healthNewsRVAdapter;
 
 
     public TopStoriesFragment() {
@@ -37,24 +37,24 @@ public class TopStoriesFragment extends Fragment {
         /*widgetLatestNews = view.findViewById(R.id.widgetLatestNews);
         widgetLatestNews.setText("Latest News");
         widgetLatestNews.setTypeandTopic("query","indore");
-        widgetLatestNews.loadq("indore");
+        widgetLatestNews.loadq("world");*/
 
         widgetIndiaNews = view.findViewById(R.id.widgetIndiaNews);
         widgetIndiaNews.setText("India");
-        widgetIndiaNews.setTypeandTopic("country","in");
-        widgetIndiaNews.loadc("in");*/
+        widgetIndiaNews.setTypeandTopic("country", "in");
+        widgetIndiaNews.loadc("in");
 
         widgetGeneralNews = view.findViewById(R.id.widgetGeneralNews);
         widgetGeneralNews.setText("General");
         widgetGeneralNews.setTypeandTopic("category", "general");
         widgetGeneralNews.load("general");
 
-        widgetTechNews = view.findViewById(R.id.widgetTechNews);
+        /*widgetTechNews = view.findViewById(R.id.widgetTechNews);
         widgetTechNews.setText("Tech");
         widgetTechNews.setTypeandTopic("category", "technology");
         widgetTechNews.load("technology");
 
-        /*widgetScienceNews = view.findViewById(R.id.widgetScienceNews);
+        widgetScienceNews = view.findViewById(R.id.widgetScienceNews);
         widgetScienceNews.load("science");
         widgetScienceNews.setTypeandTopic("category","science");
         widgetScienceNews.setText("Science");
@@ -77,8 +77,8 @@ public class TopStoriesFragment extends Fragment {
         widgetBusinessNews = view.findViewById(R.id.widgetBusinessNews);
         widgetBusinessNews.setText("Business");
         widgetBusinessNews.setTypeandTopic("category","business");
-        widgetBusinessNews.load("business");*/
-
+        widgetBusinessNews.load("business");
+*/
         return view;
     }
 }

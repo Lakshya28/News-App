@@ -138,10 +138,10 @@ public class SourceFragment extends Fragment {
     public void loadSearch(String searchQuery) {
         List<UserChoiceClass> mUserList = userChoiceList;
 
-        if (!searchQuery.isEmpty()) {
+        if (!searchQuery.isEmpty() && mUserList != null) {
             mUserList = utils.search(searchQuery, mUserList);
         }
-        recyclerViewAdapter.updateAdapter(mUserList);
+        if (mUserList != null) recyclerViewAdapter.updateAdapter(mUserList);
     }
 }
 

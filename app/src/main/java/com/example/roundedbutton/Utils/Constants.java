@@ -5,6 +5,9 @@ public class Constants {
     public static final String EMPTY = "";
     //public static final String API_KEY = "7fed359922a045fc8b73231117cbf6f7";
     public static final String API_KEY = "71d50912210c4e6d9284bc177483dfeb";
+    public static final String SHARED_PREF = "sharedPref";
+    public static final String LOCATION = "location";
+
 
     public static class Category {
         public static final String GENERAL = "general";

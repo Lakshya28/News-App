@@ -1,6 +1,7 @@
 package com.example.roundedbutton.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.roundedbutton.Activity.WebViewActivity;
 import com.example.roundedbutton.R;
-import com.example.roundedbutton.Utils.utils;
 import com.kwabenaberko.newsapilib.models.Article;
 
 import java.util.List;
@@ -42,6 +43,11 @@ public class SmallNewsCardAdapter extends RecyclerView.Adapter<SmallNewsCardAdap
         Article article = articleList.get(position);
         holder.articleHeadline.setText(article.getTitle());
         Glide.with(holder.articleImage.getContext()).load(article.getUrlToImage()).into(holder.articleImage);
+        holder.itemView.setOnClickListener(view -> {
+            Intent intent = new Intent(mContext, WebViewActivity.class);
+            intent.putExtra("articleUrl", article.getUrl());
+            mContext.startActivity(intent);
+        });
     }
 
     @Override

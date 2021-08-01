@@ -51,7 +51,7 @@ public class LocationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_location, container, false);
         recyclerView = v.findViewById(R.id.interestRecyclerView);
-        recyclerViewAdapter = new InterestRecyclerViewAdapter(getContext(), userChoiceList);
+        recyclerViewAdapter = new InterestRecyclerViewAdapter(getContext(), userChoiceList, true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(recyclerViewAdapter);
         return v;
@@ -95,10 +95,10 @@ public class LocationFragment extends Fragment {
     public void loadSearch(String searchQuery) {
         List<UserChoiceClass> mUserList = userChoiceList;
 
-        if (!searchQuery.isEmpty()) {
+        if (!searchQuery.isEmpty() && mUserList != null) {
             mUserList = utils.search(searchQuery, mUserList);
         }
-        recyclerViewAdapter.updateAdapter(mUserList);
+        if (mUserList != null) recyclerViewAdapter.updateAdapter(mUserList);
 
     }
 }

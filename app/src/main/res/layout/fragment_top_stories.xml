@@ -49,10 +49,12 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
         -->
 
+        <!--
         <com.example.roundedbutton.Widgets.NewsTopicWidget
             android:id="@+id/widgetLatestNews"
             android:layout_height="wrap_content"
             android:layout_width="match_parent" />
+        -->
 
         <com.example.roundedbutton.Widgets.NewsTopicWidget
             android:id="@+id/widgetIndiaNews"

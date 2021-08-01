@@ -1,5 +1,6 @@
 package com.example.roundedbutton.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.example.roundedbutton.Adapter.NewsRecyclerViewAdapter;
 import com.example.roundedbutton.R;
@@ -31,6 +33,8 @@ public class TopicNewsActivity extends AppCompatActivity {
     List<Article> test = new ArrayList<>();
     private RecyclerView recyclerView;
     private NewsRecyclerViewAdapter newsRecyclerViewAdapter;
+    private int page = 1;
+    private View mLoadingIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,33 +50,79 @@ public class TopicNewsActivity extends AppCompatActivity {
         toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        mLoadingIndicator = findViewById(R.id.loading_indicator);
         recyclerView = findViewById(R.id.topicNewsRecyclerView);
         newsRecyclerViewAdapter = new NewsRecyclerViewAdapter(this, articleList, topic);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(newsRecyclerViewAdapter);
+        recyclerView.addOnScrollListener(OnScrollListener);
 
-        if (("category").equals(type)) {
-            getAllArticleCategory(topic);
+        APICall(page, type);
+
+        /*if (("category").equals(type)) {
+            getAllArticleCategory(page, topic);
         } else if (("country").equals(type)) {
-            getAllArticleCountry(topic);
+            getAllArticleCountry(page, topic);
         } else {
-            getAllArticleQuery(topic);
+            getAllArticleQuery(page, topic);
+        }*/
+    }
+
+    private void APICall(int page, String type) {
+        Log.d("LakshyaPageNewsAPICall", "page :" + page);
+        if (("category").equals(type)) {
+            getAllArticleCategory(page, topic);
+        } else if (("country").equals(type)) {
+            getAllArticleCountry(page, topic);
+        } else {
+            getAllArticleQuery(page, topic);
         }
 
     }
 
-    public void getAllArticleCategory(String category) {
+    private RecyclerView.OnScrollListener OnScrollListener = new RecyclerView.OnScrollListener() {
+        @Override
+        public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+            super.onScrollStateChanged(recyclerView, newState);
+        }
+
+        @Override
+        public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
+            super.onScrolled(recyclerView, dx, dy);
+            if (isLastItemDisplaying(recyclerView)) {
+                mLoadingIndicator.setVisibility(View.VISIBLE);
+                Log.d("LakshyaPageTopicNews", "page :" + page);
+                page++;
+                APICall(page, type);
+            }
+        }
+    };
+
+    private boolean isLastItemDisplaying(RecyclerView recyclerView) {
+        if (recyclerView.getAdapter().getItemCount() != 0) {
+            int lastVisiblePosition = ((LinearLayoutManager) recyclerView.getLayoutManager()).findLastCompletelyVisibleItemPosition();
+            if (lastVisiblePosition != RecyclerView.NO_POSITION && lastVisiblePosition == recyclerView.getAdapter().getItemCount() - 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void getAllArticleCategory(int page, String category) {
         NewsApiClient newsApiClient = new NewsApiClient(Constants.API_KEY);
         newsApiClient.getTopHeadlines(new TopHeadlinesRequest.Builder().language("en")
                         .category(category)
+                        .page(page)
                         .language("en")
                         .build(),
                 new NewsApiClient.ArticlesResponseCallback() {
                     @Override
                     public void onSuccess(ArticleResponse articleResponse) {
+                        mLoadingIndicator.setVisibility(View.INVISIBLE);
                         test = articleResponse.getArticles();
-                        articleList.addAll(test);
+                        //articleList.addAll(test);
                         newsRecyclerViewAdapter.addAll(test);
                     }
 
@@ -84,17 +134,19 @@ public class TopicNewsActivity extends AppCompatActivity {
         );
     }
 
-    public void getAllArticleCountry(String country) {
+    public void getAllArticleCountry(int page, String country) {
         NewsApiClient newsApiClient = new NewsApiClient(Constants.API_KEY);
         newsApiClient.getTopHeadlines(new TopHeadlinesRequest.Builder().language("en")
                         .country(country)
+                        .page(page)
                         .language("en")
                         .build(),
                 new NewsApiClient.ArticlesResponseCallback() {
                     @Override
                     public void onSuccess(ArticleResponse articleResponse) {
+                        mLoadingIndicator.setVisibility(View.INVISIBLE);
                         test = articleResponse.getArticles();
-                        articleList.addAll(test);
+                        //articleList.addAll(test);
                         newsRecyclerViewAdapter.addAll(test);
                     }
 
@@ -106,18 +158,20 @@ public class TopicNewsActivity extends AppCompatActivity {
         );
     }
 
-    public void getAllArticleQuery(String query) {
+    public void getAllArticleQuery(int page, String query) {
         NewsApiClient newsApiClient = new NewsApiClient(Constants.API_KEY);
         newsApiClient.getEverything(
                 new EverythingRequest.Builder()
                         .language("en")
+                        .page(page)
                         .q(query)
                         .build(),
                 new NewsApiClient.ArticlesResponseCallback() {
                     @Override
                     public void onSuccess(ArticleResponse articleResponse) {
+                        mLoadingIndicator.setVisibility(View.INVISIBLE);
                         test = articleResponse.getArticles();
-                        articleList.addAll(test);
+                        //articleList.addAll(test);
                         newsRecyclerViewAdapter.addAll(test);
                     }
 
@@ -132,5 +186,11 @@ public class TopicNewsActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
     }
 }

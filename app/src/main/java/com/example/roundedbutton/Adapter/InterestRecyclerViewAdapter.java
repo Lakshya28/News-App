@@ -1,6 +1,7 @@
 package com.example.roundedbutton.Adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,10 +25,18 @@ public class InterestRecyclerViewAdapter extends RecyclerView.Adapter<InterestRe
 
     Context mContext;
     public List<UserChoiceClass> mUserChoice;
+    boolean location;
+    SharedPreferences sharedPreferences;
 
     public InterestRecyclerViewAdapter(Context context, List<UserChoiceClass> userChoice) {
         this.mContext = context;
         this.mUserChoice = userChoice;
+    }
+
+    public InterestRecyclerViewAdapter(Context context, List<UserChoiceClass> userChoice, boolean location) {
+        this.mContext = context;
+        this.mUserChoice = userChoice;
+        this.location = location;
     }
 
     @NonNull
@@ -60,6 +69,13 @@ public class InterestRecyclerViewAdapter extends RecyclerView.Adapter<InterestRe
         }
 
         holder.addIcon.setOnClickListener(view -> {
+            if (location) {
+                sharedPreferences = mContext.getSharedPreferences(Constants.SHARED_PREF, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(Constants.LOCATION, userChoice.getTitle());
+                editor.apply();
+            }
+
             if (!mUserChoice.get(position).getSelected()) {
                 holder.addIcon.setImageResource(R.drawable.ic_check_mark);
                 mUserChoice.get(position).setSelected(true);

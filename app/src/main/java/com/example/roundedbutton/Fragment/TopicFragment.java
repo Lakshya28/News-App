@@ -92,10 +92,11 @@ public class TopicFragment extends Fragment {
     public void loadSearch(String searchQuery) {
         List<UserChoiceClass> mUserList = userChoiceList;
         Log.d("LakSearch", searchQuery);
-        if (!searchQuery.isEmpty()) {
+        if (!searchQuery.isEmpty() && mUserList != null) {
             mUserList = utils.search(searchQuery, mUserList);
         }
-        recyclerViewAdapter.updateAdapter(mUserList);
+        Log.d("lakshya", "lakshyaerror");
+        if (mUserList != null) recyclerViewAdapter.updateAdapter(mUserList);
 
     }
 }

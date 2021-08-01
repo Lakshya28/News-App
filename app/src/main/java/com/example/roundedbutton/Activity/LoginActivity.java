@@ -1,10 +1,12 @@
 package com.example.roundedbutton.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.core.view.ViewCompat;
 import androidx.viewpager.widget.ViewPager;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -63,6 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Signup"));
         //tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
         tabLayout.setTabTextColors(Color.WHITE, Color.BLACK);
+        //ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 44);
 
         int tabCount = tabLayout.getTabCount();
 
@@ -102,7 +105,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     Drawable setImageButtonStateNew(Context mContext) {

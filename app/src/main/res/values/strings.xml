@@ -7,5 +7,6 @@
     <string name="greeting">Hope You Find it Useful !!</string>
     <string name="navigation_drawer_open">Open Navigation Drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="share_article">Share Article</string>
 
 </resources>

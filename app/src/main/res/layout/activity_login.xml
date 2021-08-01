@@ -1,107 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="20dp"
-    android:layout_marginBottom="30dp"
-    android:background="@drawable/groupbackground"
     tools:context=".Activity.LoginActivity">
 
     <ImageView
         android:id="@+id/appicon"
         android:layout_width="80dp"
         android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
-        android:src="@drawable/appiconblack" />
+        android:src="@drawable/appiconblack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tvtagline"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/appicon"
         android:gravity="center"
-        android:layout_marginTop="3dp"
+        android:maxLines="2"
         android:text="Log in to save and access articles across devices and take advantages of other feature - all free!"
-        android:layout_centerHorizontal="true" />
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@id/guideline1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appicon" />
+
+    <View
+        android:id="@+id/bgView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/all_round_black"
+        app:layout_constraintBottom_toBottomOf="@id/guideline2"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/guideline1" />
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="450dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="170dp"
-        android:orientation="vertical">
+        android:id="@+id/viewPagerLinearLayout"
+        android:layout_width="0dp"
+        android:layout_height="380dp"
+        android:orientation="vertical"
+        android:padding="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3"
+        app:layout_constraintTop_toBottomOf="@id/guideline1">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
-            android:layout_width="180dp"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
             android:background="@drawable/tabview_bg"
             app:tabGravity="center"
             app:tabIndicatorColor="@android:color/transparent"
             app:tabIndicatorHeight="0dp"
             app:tabRippleColor="@null"
-            app:tabSelectedTextColor="@android:color/black" />
+            app:tabSelectedTextColor="@android:color/black"
+            app:tabTextAppearance="@style/MyCustomTabText" />
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="5dp" />
+            android:layout_height="wrap_content"
+            android:layout_margin="0dp" />
     </LinearLayout>
 
     <TextView
+        android:id="@+id/tvtext"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/tvtermsandcondition"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:maxLines="1"
+        android:text="By pressing Submit you agree to our"
         android:textColor="@color/white"
         android:textSize="10sp"
-        android:gravity="center"
-        android:layout_centerHorizontal="true"
-        android:text="By pressing Submit you agree to our" />
+        app:layout_constraintBottom_toTopOf="@id/tvtermsandcondition"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:layout_width="200dp"
         android:id="@+id/tvtermsandcondition"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/submitButton"
+        android:layout_above="@+id/guideline2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="@string/terms_and_conditions"
         android:textColor="@color/golden"
         android:textSize="10sp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20dp"
-        android:text="@string/terms_and_conditions"
-        android:gravity="center" />
-
+        app:layout_constraintBottom_toBottomOf="@id/bgView"
+        app:layout_constraintEnd_toEndOf="@id/guideline4"
+        app:layout_constraintStart_toStartOf="@id/guideline3" />
 
     <Button
         android:id="@+id/submitButton"
         style="@style/Theme.buttonView"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/round_button"
         android:shadowColor="@color/grey"
         android:text="Submit"
         android:textColor="@color/black"
-        android:textSize="12sp"
-        android:textStyle="bold" />
+        android:textSize="10sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvtermsandcondition" />
 
     <TextView
         android:id="@+id/skipButton"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="Skip"
         android:textAllCaps="true"
-        android:textColor="@color/grey"
-        android:textSize="13sp"
-        android:textStyle="bold" />
+        android:textColor="@color/grey700"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/submitButton" />
 
-</RelativeLayout>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

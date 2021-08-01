@@ -107,10 +107,10 @@ public class utils {
             list.add(context.getResources().getString(0 + R.color.red));
         } else if (("in").equals(topic)) {
             list.add(context.getResources().getString(0 + R.color.green100));
-            list.add(context.getResources().getString(0 + R.color.green400));
+            list.add(context.getResources().getString(0 + R.color.green500));
         } else if (("general").equals(topic) || ("startup").equals(topic)) {
             list.add(context.getResources().getString(0 + R.color.blue100));
-            list.add(context.getResources().getString(0 + R.color.blue400));
+            list.add(context.getResources().getString(0 + R.color.blue500));
         } else if (("technology").equals(topic)) {
             list.add(context.getResources().getString(0 + R.color.yellow100));
             list.add(context.getResources().getString(0 + R.color.yellow500));
@@ -119,13 +119,13 @@ public class utils {
             list.add(context.getResources().getString(0 + R.color.purple500));
         } else if (("sports").equals(topic)) {
             list.add(context.getResources().getString(0 + R.color.brown100));
-            list.add(context.getResources().getString(0 + R.color.brown400));
+            list.add(context.getResources().getString(0 + R.color.brown500));
         } else if (("entertainment").equals(topic) || ("food").equals(topic)) {
             list.add(context.getResources().getString(0 + R.color.orange100));
             list.add(context.getResources().getString(0 + R.color.orange500));
         } else if (("health").equals(topic)) {
             list.add(context.getResources().getString(0 + R.color.pink100));
-            list.add(context.getResources().getString(0 + R.color.pink300));
+            list.add(context.getResources().getString(0 + R.color.pink500));
         } else if (("business").equals(topic)) {
             list.add(context.getResources().getString(0 + R.color.teal100));
             list.add(context.getResources().getString(0 + R.color.teal500));

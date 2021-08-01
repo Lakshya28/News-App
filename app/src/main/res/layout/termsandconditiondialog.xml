@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
-        android:layout_width="320dp"
-        android:layout_height="600dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerInParent="true"
         android:padding="15dp">
@@ -17,32 +22,35 @@
             android:textColor="@color/black"
             android:text="Terms and Conditions"
             android:textStyle="bold"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:textSize="12sp"
             android:text="@string/dummytext" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:textSize="12sp"
             android:text="@string/dummytext" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:textSize="12sp"
             android:text="@string/dummytext" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:textSize="12sp"
             android:text="@string/dummytext" />
-
 
         <Button
             android:id="@+id/agreeButton"
@@ -52,16 +60,16 @@
             android:layout_marginTop="80dp"
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
-            android:layout_marginBottom="80dp"
             android:background="@drawable/round_button"
             android:shadowColor="@color/grey"
-            android:text="Agree"
+            android:text="I Agree"
             android:textAllCaps="false"
             android:elevation="20dp"
+            android:layout_marginBottom="10dp"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/black"
             android:textSize="12sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

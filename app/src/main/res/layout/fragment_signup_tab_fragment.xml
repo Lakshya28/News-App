@@ -1,154 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.SignupTabFragment">
 
 
     <LinearLayout
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="250dp"
-        android:layout_height="300dp"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="40dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="2dp"
             android:background="@drawable/round_button"
             android:orientation="horizontal"
-            android:padding="5dp">
+            android:padding="6dp">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="4dp"
                 android:src="@drawable/ic_email" />
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_marginRight="20dp"
-                android:textCursorDrawable="@null"
                 android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:background="@color/white"
                 android:gravity="left|center"
                 android:hint="Email Address"
-                android:background="@color/white"
                 android:textColorHint="@color/grey"
-                android:textSize="15sp" />
+                android:textCursorDrawable="@null"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="2dp"
             android:background="@drawable/round_button"
             android:orientation="horizontal"
-            android:padding="5dp">
+            android:padding="6dp">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="4dp"
                 android:src="@drawable/ic_password" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:background="@color/white"
                 android:gravity="left|center"
                 android:hint="Password"
-                android:layout_marginRight="20dp"
-                android:textCursorDrawable="@null"
                 android:textColorHint="@color/grey"
-                android:background="@color/white"
-                android:textSize="15sp" />
+                android:textCursorDrawable="@null"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="2dp"
             android:background="@drawable/round_button"
             android:orientation="horizontal"
-            android:padding="5dp">
+            android:padding="6dp">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="4dp"
                 android:src="@drawable/ic_password" />
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_marginRight="20dp"
-                android:textCursorDrawable="@null"
                 android:layout_height="match_parent"
-                android:gravity="left|center"
-                android:hint="Retype Password"
-                android:textColorHint="@color/grey"
+                android:layout_marginRight="20dp"
                 android:background="@color/white"
-                android:textSize="15sp" />
+                android:gravity="left|center"
+                android:hint="Retype your Password"
+                android:textColorHint="@color/grey"
+                android:textCursorDrawable="@null"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="2dp"
             android:background="@drawable/round_button"
             android:orientation="horizontal"
-            android:padding="5dp">
+            android:padding="6dp">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginRight="10dp"
                 android:src="@drawable/googlelogo" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:background="@color/white"
                 android:gravity="left|center"
-                android:textColor="@color/black"
-                android:text="Sign up with Google"
-                android:textSize="15sp" />
+                android:text="Login in with Google"
+                android:textColorHint="@color/grey"
+                android:textCursorDrawable="@null"
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="250dp"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="2dp"
             android:background="@drawable/round_button"
             android:orientation="horizontal"
-            android:padding="5dp">
+            android:padding="6dp">
 
             <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
                 android:layout_gravity="center"
-                android:layout_margin="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginRight="10dp"
                 android:src="@drawable/fbicon" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:background="@color/white"
                 android:gravity="left|center"
-                android:textColor="@color/black"
-                android:text="Sign up with Facebook"
-                android:textSize="15sp" />
+                android:text="Login in with Facebook"
+                android:textColorHint="@color/grey"
+                android:textCursorDrawable="@null"
+                android:textSize="12sp" />
         </LinearLayout>
 
 
     </LinearLayout>
 
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_margin="5dp"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:orientation="horizontal">
@@ -14,15 +14,21 @@
             android:id="@+id/newIcon"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
             android:layout_gravity="center"
             android:src="@drawable/dainik_bhaskar" />
 
         <TextView
             android:id="@+id/intrest_title"
-            android:layout_width="220dp"
-            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
             android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
             android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/newIcon"
             android:gravity="center_vertical"
             android:text="Dainik Bhaskar"
             android:textColor="@color/black"
@@ -32,11 +38,14 @@
             android:id="@+id/addIcon"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:gravity="end"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:layout_gravity="center"
-            android:layout_marginLeft="12dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
             android:src="@drawable/ic_add_icon" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <View
         android:layout_width="match_parent"

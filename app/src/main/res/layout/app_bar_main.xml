@@ -47,7 +47,7 @@
         <View
             android:id="@+id/homebottomview"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="25dp"
             android:background="@drawable/bottom_two_corner_rounded"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/home_toolbar"
@@ -55,14 +55,13 @@
             app:layout_constraintTop_toBottomOf="@+id/home_toolbar"
             app:layout_constraintVertical_bias="0.0" />
 
-
         <!-- TabLayout that provides a horizontal layout to display tabs -->
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/home_sliding_tabs"
             android:layout_width="match_parent"
             android:layout_height="35dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
             android:layout_marginRight="30dp"
             android:background="@android:color/transparent"
             app:layout_constraintTop_toTopOf="@+id/homebottomview"
