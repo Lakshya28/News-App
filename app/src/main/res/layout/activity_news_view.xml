@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey50"
+    android:orientation="vertical"
+    tools:context=".Activity.NewsViewActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="?attr/homeAsUpIndicator"
+        app:theme="@style/CustomActionBar" />
+
+    <ImageView
+        android:id="@+id/articleImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/red"
+        android:scaleType="centerCrop"
+        android:src="@drawable/madhyapradesh"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/articleHeadline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3" />
+
+    <View
+        android:id="@+id/bgView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_two_corner_round"
+        android:elevation="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <ImageView
+        android:id="@+id/articleSave"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/circular_button"
+        android:elevation="5dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_save_without_border"
+        app:layout_constraintBottom_toTopOf="@id/articleHeadline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <ImageView
+        android:id="@+id/articleShare"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/circular_button"
+        android:elevation="5dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_share"
+        app:layout_constraintBottom_toTopOf="@id/articleHeadline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline" />
+
+    <ImageView
+        android:id="@+id/articleWebView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="110dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/circular_button"
+        android:elevation="5dp"
+        android:padding="4dp"
+        android:src="@drawable/ic_world"
+        app:layout_constraintBottom_toTopOf="@id/articleHeadline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline" />
+
+    <TextView
+        android:id="@+id/articleHeadline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="18dp"
+        android:elevation="2dp"
+        android:text="This is Title of Article This is Title of ArticleThis is Title of Article"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/bgView"
+        app:layout_constraintStart_toStartOf="@+id/bgView"
+        app:layout_constraintTop_toTopOf="@id/bgView" />
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutPublish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/bgView"
+        app:layout_constraintTop_toBottomOf="@id/articleHeadline">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Published by : "
+            android:textColor="@color/grey600"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/articlePublisher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The Times of India | 27 July 2021 "
+            android:textColor="@color/transparent_blue"
+            android:textSize="14sp"
+            android:textStyle="bold|italic" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/horizontalLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/darkgrey1"
+        android:elevation="3dp"
+        app:layout_constraintTop_toBottomOf="@id/LinearLayoutPublish" />
+
+    <TextView
+        android:id="@+id/articleDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="18dp"
+        android:elevation="2dp"
+        android:text="This is Description of Article This is Description of Article This is Description of Article"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@id/bgView"
+        app:layout_constraintStart_toStartOf="@+id/bgView"
+        app:layout_constraintTop_toBottomOf="@id/horizontalLine" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -98,12 +98,9 @@ public class LoginActivity extends AppCompatActivity {
         viewPager.setAdapter(loginAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
-        skipButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, UserChoiceActivity.class);
-                startActivity(intent);
-            }
+        skipButton.setOnClickListener(view -> {
+            Intent intent = new Intent(LoginActivity.this, UserChoiceActivity.class);
+            startActivity(intent);
         });
     }
 

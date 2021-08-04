@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RoundedButton">
-        <activity android:name=".Activity.WebViewActivity"></activity>
+        <activity
+            android:name=".Activity.LiveNewsDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity android:name=".Activity.WebViewActivity" />
         <activity android:name=".Activity.NewsViewActivity" />
         <activity android:name=".Activity.TopicNewsActivity" />
         <activity android:name=".Activity.HomeActivity" />

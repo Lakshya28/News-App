@@ -1,44 +1,21 @@
 package com.example.roundedbutton.Fragment;
 
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.RequestBuilder;
-import com.example.roundedbutton.Activity.NetworkService;
-import com.example.roundedbutton.Activity.RetrofitInstance;
-import com.example.roundedbutton.Activity.SourcesList;
 import com.example.roundedbutton.Activity.UserChoiceClass;
 import com.example.roundedbutton.Adapter.InterestRecyclerViewAdapter;
 import com.example.roundedbutton.R;
 import com.example.roundedbutton.Utils.utils;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonPrimitive;
-import com.kwabenaberko.newsapilib.NewsApiClient;
-import com.kwabenaberko.newsapilib.models.request.SourcesRequest;
-import com.kwabenaberko.newsapilib.models.response.SourcesResponse;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -46,15 +23,8 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-
-import retrofit2.Call;
-import retrofit2.Callback;
 
 
 public class SourceFragment extends Fragment {
@@ -76,23 +46,6 @@ public class SourceFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         userChoiceList = new ArrayList<>();
-        /*NewsApiClient newsApiClient = new NewsApiClient(API_KEY);
-        newsApiClient.getSources(
-                new SourcesRequest.Builder()
-                        .language("en")
-                        .build(),
-                new NewsApiClient.SourcesCallback() {
-                    @Override
-                    public void onSuccess(SourcesResponse response) {
-                        Log.d("LakSour", response.getSources().get(0).getName());
-                    }
-
-                    @Override
-                    public void onFailure(Throwable throwable) {
-                        System.out.println(throwable.getMessage());
-                    }
-                }
-        );*/
         setUpUserChoiceList();
     }
 

@@ -28,6 +28,7 @@ import static com.example.roundedbutton.Utils.utils.setFirstCapital;
 
 public class TopicNewsActivity extends AppCompatActivity {
 
+    private static final String TAG = "TopicNewsActivity";
     String topic, type;
     List<Article> articleList;
     List<Article> test = new ArrayList<>();
@@ -60,14 +61,6 @@ public class TopicNewsActivity extends AppCompatActivity {
         recyclerView.addOnScrollListener(OnScrollListener);
 
         APICall(page, type);
-
-        /*if (("category").equals(type)) {
-            getAllArticleCategory(page, topic);
-        } else if (("country").equals(type)) {
-            getAllArticleCountry(page, topic);
-        } else {
-            getAllArticleQuery(page, topic);
-        }*/
     }
 
     private void APICall(int page, String type) {
@@ -128,7 +121,7 @@ public class TopicNewsActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Throwable throwable) {
-                        Log.d("LakError", throwable.getMessage());
+                        Log.d(TAG + "LakErr", throwable.getMessage());
                     }
                 }
         );
@@ -152,7 +145,7 @@ public class TopicNewsActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Throwable throwable) {
-                        Log.d("LakError", throwable.getMessage());
+                        Log.d(TAG + "LakErr", throwable.getMessage());
                     }
                 }
         );
@@ -177,7 +170,7 @@ public class TopicNewsActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Throwable throwable) {
-                        Log.d("LakError", throwable.getMessage());
+                        Log.d(TAG + "LakErr", throwable.getMessage());
                     }
                 }
         );

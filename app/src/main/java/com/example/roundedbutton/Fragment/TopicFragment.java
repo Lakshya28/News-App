@@ -38,7 +38,6 @@ public class TopicFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         userChoiceList = new ArrayList<>();
         setUpUserChoiceList();
     }
