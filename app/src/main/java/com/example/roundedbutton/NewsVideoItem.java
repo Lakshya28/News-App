@@ -21,6 +21,13 @@ public class NewsVideoItem implements Parcelable {
         this.imageUrl = "https://logo.clearbit.com/" + websiteUrl;
     }
 
+    public NewsVideoItem(String name, String websiteUrl, String videoId, String imageUrl) {
+        this.channelName = name;
+        this.websiteUrl = websiteUrl;
+        this.videoId = videoId;
+        this.imageUrl = imageUrl;
+    }
+
     public NewsVideoItem(String name, String description, String youtubeUrl, String websiteUrl, String videoId) {
         this.channelName = name;
         this.description = description;
