@@ -17,6 +17,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.roundedbutton.Activity.NewsViewActivity;
+import com.example.roundedbutton.Database.AppDatabase;
+import com.example.roundedbutton.Entities.SavedArticle;
 import com.example.roundedbutton.R;
 import com.example.roundedbutton.Utils.utils;
 import com.kwabenaberko.newsapilib.models.Article;
@@ -34,6 +36,7 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
     List<Article> articleList;
     Context mContext;
     //String topic = "";
+    AppDatabase appDatabase;
 
     public NewsRecyclerViewAdapter(Context context, List<Article> articleList) {
         this.mContext = context;
@@ -96,6 +99,28 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
             intent.putExtra("publishTime", utils.getTimeDifference(utils.formatDate(article.getPublishedAt())));
             mContext.startActivity(intent);
         });
+
+        appDatabase = AppDatabase.getAppDatabase(mContext);
+
+        if (appDatabase.savedArticleDao().search(article.getUrl()) > 0) {
+            holder.articleSave.setImageDrawable(mContext.getDrawable(R.drawable.ic_save_with_border));
+        } else {
+            holder.articleSave.setImageDrawable(mContext.getDrawable(R.drawable.ic_save_without_border));
+        }
+
+        holder.articleSave.setOnClickListener(view -> {
+            if (appDatabase.savedArticleDao().search(article.getUrl()) > 0) {
+                holder.articleSave.setImageDrawable(mContext.getDrawable(R.drawable.ic_save_without_border));
+                appDatabase.savedArticleDao().delete(article.getUrl());
+            } else {
+                holder.articleSave.setImageDrawable(mContext.getDrawable(R.drawable.ic_save_with_border));
+                SavedArticle savedArticle = new SavedArticle(
+                        article.getTitle(), article.getDescription(), article.getSource().getName(),
+                        article.getSource().getCategory(), article.getUrl(), article.getUrlToImage(), article.getPublishedAt());
+                appDatabase.savedArticleDao().insert(savedArticle);
+            }
+        });
+
     }
 
     @Override

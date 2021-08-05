@@ -12,11 +12,14 @@ import android.util.Log;
 import android.view.View;
 
 import com.example.roundedbutton.Adapter.NewsRecyclerViewAdapter;
+import com.example.roundedbutton.Database.AppDatabase;
+import com.example.roundedbutton.Entities.SavedArticle;
 import com.example.roundedbutton.R;
 import com.example.roundedbutton.Utils.Constants;
 import com.example.roundedbutton.Utils.utils;
 import com.kwabenaberko.newsapilib.NewsApiClient;
 import com.kwabenaberko.newsapilib.models.Article;
+import com.kwabenaberko.newsapilib.models.Source;
 import com.kwabenaberko.newsapilib.models.request.EverythingRequest;
 import com.kwabenaberko.newsapilib.models.request.TopHeadlinesRequest;
 import com.kwabenaberko.newsapilib.models.response.ArticleResponse;
@@ -60,7 +63,29 @@ public class TopicNewsActivity extends AppCompatActivity {
         recyclerView.setAdapter(newsRecyclerViewAdapter);
         recyclerView.addOnScrollListener(OnScrollListener);
 
-        APICall(page, type);
+        if (("saved").equals(type)) {
+            mLoadingIndicator.setVisibility(View.INVISIBLE);
+            AppDatabase appDatabase = AppDatabase.getAppDatabase(this);
+            List<SavedArticle> savedArticles = appDatabase.savedArticleDao().getAll();
+            List<Article> test = new ArrayList<>();
+            for (int i = 0; i < savedArticles.size(); i++) {
+                SavedArticle savedArticle = savedArticles.get(i);
+                Article article = new Article();
+                article.setTitle(savedArticle.getTitle());
+                article.setUrl(savedArticle.getUrl());
+                article.setUrlToImage(savedArticle.getUrlToImage());
+                Source source = new Source();
+                source.setName(savedArticle.getSourceName());
+                source.setCategory(savedArticle.getCategory());
+                article.setSource(source);
+                article.setPublishedAt(savedArticle.getPublishedAt());
+                test.add(article);
+            }
+            newsRecyclerViewAdapter.addAll(test);
+            Log.d("LakSavedSize", "Size " + savedArticles.size());
+        } else {
+            APICall(page, type);
+        }
     }
 
     private void APICall(int page, String type) {
@@ -85,10 +110,12 @@ public class TopicNewsActivity extends AppCompatActivity {
         public void onScrolled(@NonNull RecyclerView recyclerView, int dx, int dy) {
             super.onScrolled(recyclerView, dx, dy);
             if (isLastItemDisplaying(recyclerView)) {
-                mLoadingIndicator.setVisibility(View.VISIBLE);
-                Log.d("LakshyaPageTopicNews", "page :" + page);
-                page++;
-                APICall(page, type);
+                if (!("saved").equals(type)) {
+                    mLoadingIndicator.setVisibility(View.VISIBLE);
+                    Log.d("LakshyaPageTopicNews", "page :" + page);
+                    page++;
+                    APICall(page, type);
+                }
             }
         }
     };

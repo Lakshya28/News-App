@@ -49,11 +49,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.lorentzos.swipecards:library:1.0.9@aar'
-
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
-
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
 
+    implementation "androidx.room:room-runtime:2.3.0"
+    annotationProcessor "androidx.room:room-compiler:2.3.0"
 
 
 }

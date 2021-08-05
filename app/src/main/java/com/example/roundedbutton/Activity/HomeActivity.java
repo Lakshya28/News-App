@@ -138,7 +138,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_health) {
             type = "category";
             topic = "health";
-
         } else if (id == R.id.nav_startup) {
             type = "query";
             topic = "startup";
@@ -149,6 +148,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_food) {
             type = "query";
             topic = "food";
+        } else if (id == R.id.nav_settings) {
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+            Intent intent = new Intent(HomeActivity.this, SettingsActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.nav_save_later) {
+            type = "saved";
+            topic = "saved";
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
